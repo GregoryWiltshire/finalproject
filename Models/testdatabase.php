@@ -13,7 +13,7 @@ if (isset($_GET['aid']) && is_numeric($_GET['aid'])) {
 
 // Connecting to and selecting a MySQL database named sakila
 // Hostname: 127.0.0.1, username: your_user, password: your_pass, db: sakila
-$mysqli = new mysqli('localhost', 'root', '', 'rentaldb');
+$mysqli = new mysqli('localhost', 'root', 'root', 'rentaldb');
 
 // Oh no! A connect_errno exists so the connection attempt failed!
 if ($mysqli->connect_errno) {

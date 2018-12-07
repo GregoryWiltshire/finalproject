@@ -3,13 +3,13 @@
 
   
   function get_db_connection(){
-    $servername = "localhost:8889";
-    $username = "rashad";
-    $password = "password";
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
     $dbname = "rentaldb";
 
     // Create connection
-    $conn = new mysqli('localhost', 'root', '', 'rentaldb');
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
     if (!$conn) {
@@ -21,14 +21,30 @@
 
   function create_user($username,$password,$email){
     $conn = get_db_connection();
-    $sql ="INSERT INTO users (USERNAME, PASSWORD, EMAIL) VALUES ($username,$password,$email)";
 
-    if (!$result = $conn->query($sql)){
-        echo "unable to execute query";
+    if(column_value_exist($username,"USERNAME")){
+      //abort
+      $conn->close();
+      echo "user exists";
+      exit;
+    }
+
+    $sql = "INSERT INTO users (USERNAME, EMAIL, PASSWORD) VALUES ('$username','$email','$password')";
+
+    $query = mysqli_query($conn,$sql);
+
+    if(!$query){
+        echo "unable to execute create_user query";
         $conn->close();
         exit;
-
     }
+
+    // if (!$conn->query($sql)){
+    //     echo "unable to execute create_user query";
+    //     $conn->close();
+    //     exit;
+
+    // }
      $conn->close();
   }
 
@@ -36,7 +52,7 @@
     $conn = get_db_connection();
     $sql ="SELECT $column FROM users WHERE $column = '$value'";
     if (!$result = $conn->query($sql)){
-        echo "unable to execute query";
+        echo "unable to execute query column_value_exist";
         $conn->close();
         exit;
     }
@@ -96,23 +112,23 @@
 
 
   //testing username 
-  if(column_value_exist('greg','USERNAME')){
-    echo("user was valid");
-  } 
-  else{
-        echo("user was not valid");
-  }
+  // if(column_value_exist('greg','USERNAME')){
+  //   echo("user was valid");
+  // } 
+  // else{
+  //       echo("user was not valid");
+  // }
 
   //testing pw
-  if(column_value_exist('Bollucks','PASSWORD')){
-    echo("pw was valid");
-  } 
-  else{
-        echo("pw was not valid");
-  }
+  // if(column_value_exist('Bollucks','PASSWORD')){
+  //   echo("pw was valid");
+  // } 
+  // else{
+  //       echo("pw was not valid");
+  // }
 
 
-  create_user('samir','purple','booty@booty.com');
+  create_user("samir","purple","booty@booty.com");
 
 
 ?>
