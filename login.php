@@ -1,19 +1,19 @@
 <?php
 session_start();
-include "user.php";
+include "login_controller.php";
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="test1.css">
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="test1.css">
 </head>
 <body>
-	<?php
+  <?php
   $logattempts="";
-	$user="";
-	$pass="";
-	$validate=true;
+  $user="";
+  $pass="";
+  $validate=true;
 // define variables and set to empty values
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass= "Password is required";
     $validate=false;
   }
-  if (!empty($_POST["password"])&& !empty($_POST["username"])&&checklogin($_POST["username"],$_POST["password"])!=true) {
+  if (!empty($_POST["password"])&& !empty($_POST["username"])&&checklogin($_POST["username"],$_POST["password"])==false) {
     $_SESSION['count']++;
     $logattempts="Login Failed ".$_SESSION['count']." times";
     $user= "User Name doesn't match";
@@ -36,20 +36,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   
   //if (!empty($_POST["username"])&& checklogin($_POST["username"])!=true) {
-  	  //$user= "User Name doesn't match";
-  	    //$validate=false;
+      //$user= "User Name doesn't match";
+        //$validate=false;
  
   //}
 if($validate===true){
   session_destroy ();
   header('Location:https://bryantarchway.com/what-is-the-true-meaning-of-success/');
 
-	}
+  }
   //echo $_SESSION['user'];
   //echo $_SESSION['pass'];
 }
 ?>
-	<div class="container" id="test2"> 
+  <div class="container" id="test2"> 
   <form id="contact" action="" method="post"> 
     <h1>Login to Play</h1>
     <fieldset>

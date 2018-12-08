@@ -1,22 +1,22 @@
 <?php
-include 'user.php';
+include 'registration_controller.php';
 
 session_start();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="test1.css">
+  <title>Register</title>
+  <link rel="stylesheet" type="text/css" href="test1.css">
 </head>
 <body>
-	<?php
-	$namerror="";
-	$emailerror="";
-	$user="";
-	$pass="";
-	$cpass="";
-	$validate=true;
+  <?php
+  $namerror="";
+  $emailerror="";
+  $user="";
+  $pass="";
+  $cpass="";
+  $validate=true;
 // define variables and set to empty values
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,11 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $namerror = "Name is required";
     $validate=false;
  } else {
-  	$name = test_input($_POST["name"]);
+    $name = test_input($_POST["name"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
       $namerror = "Only letters and white space allowed"; 
-      	$validate=false;
+        $validate=false;
       }
   }
   
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $validate=false;
     }
     else{
-      if(checkemail($_POST["email"])==true){
+      if(validate_person($_POST["email"],"email")==true){
       $validate=false;
       $emailerror="Email exists already";
     }
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user= "User Name is required";
     $validate=false;
   }
-  elseif(checkuser($_POST["username"])==true){
+  elseif(validate_person($_POST["username"],"username")==true){
           $validate=false;
           $user="User exists already";
   }
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $validate=false;
   }
   if (!empty($_POST["password"])&& empty($_POST['cpass'])) {
-  	$validate=false;
+    $validate=false;
     $cpass= "Confirm Password";
   }
   if (!empty($_POST["password"])&& !empty($_POST['cpass'])&& $_POST["password"]!=$_POST['cpass']) {
@@ -85,14 +85,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
   }
 if($validate===true){
-	$_SESSION['user']=$_POST["username"];
-	$_SESSION['pass']=$_POST["password"];
+  $_SESSION['user']=$_POST["username"];
+  $_SESSION['pass']=$_POST["password"];
   $_SESSION['email']=$_POST["email"];
-  insert();
+  insert_user($_SESSION['user'],$_SESSION['pass'],$_SESSION['email']);
  
   header('Location:login.php');
 
-	
+  
 }
  
 }
@@ -105,11 +105,11 @@ function test_input($data) {
 }
 
 ?>
-	<div class="container">  
+  <div class="container">  
   <form id="contact" action="" method="post">
     <h1>Registration</h1>
     <fieldset>
-    	<?php echo $namerror;?>
+      <?php echo $namerror;?>
       <input placeholder="Your name" type="text" tabindex="1"  autofocus name="name">
     </fieldset>
     <fieldset>
