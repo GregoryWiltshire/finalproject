@@ -84,7 +84,9 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 
   <!-- Product grid -->
-  <?php include 'grid.php'; ?>
+  <?php include 'grid.php'; 
+    generate_grid();
+  ?>
   <!-- use grid to generate the cars -->
 
   
