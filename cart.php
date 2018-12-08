@@ -10,54 +10,33 @@
 	
 	<?php
 	
-	//connect to database
 	include 'database.php';
-	
 
-	//if cart is not set in session, create
-	if(!isset($_SESSION['cart'])){
-    	$_SESSION['cart'] = array();
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	$table = get_products_table();
-
-	// $query = 'SELECT * FROM products ORDER BY PRICE DESC';
-	// $table = mysqli_query($conn,$query);
-	// $conn->close();
+	$conn = get_db_connection();
+	$query = 'SELECT * FROM products ORDER BY PRICE DESC';
+	$table = mysqli_query($conn,$query);
+	$conn->close();
 
 		if($table){
 			if(mysqli_num_rows($table)>0){
 				while($items=mysqli_fetch_assoc($table)){
-						?>
-							<div class="container">
-								<div class="col-6 col-md-4">
-									<form method="post" action="cart.php">
-										<h3 class="text-danger"><?php echo $items['NAME'];?></h3>
-										<img src="IMG/<?php echo $items['IMAGE'];?>">
-										<h3>Rental Rate</h3>
-										<h3>$<?php echo $items['PRICE'];?>/day</h3>
-										<input type="text" name="quantity" class="form-control" value="">
-										<input type="hidden" name="name" value="<?php echo $items['NAME']?>">
-										<input type="hidden" name="price" value="<?php echo $items['PRICE']?>">
-										<input type="submit" name="additem" value="Rent" class="btn btn-dark" style="margin-top: 10px">	
-									</form>
-								</div>
-						    </div>
+					?>
+						<?php
+							echo "<div class=container>";
+								echo "<div class=col-6 col-md-4>";
+									echo"<form method=post action=cart.php>";
+										echo "<h3 class=text-danger>$items[name]</h3>";
+											echo "<img src=$items[image]>";
+										echo"<h3>$items[price]></h3>";
+										echo "<input type=text name=quantity class=form-control value=1>";
+										echo "<input type=hidden name=name value=$items[name]>";
+										echo "<input type=hidden name=price value=price $items[price]>";
+										echo "<input type=submit name=additem value=Rent class=btn btn-dark style=margin-top: 10px>";
+									echo "</form>";
+								echo"</div>";
+						   echo "</div>";
+									 
+						   ?>
 						<?php
 				}
 			}
