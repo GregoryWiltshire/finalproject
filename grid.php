@@ -9,15 +9,28 @@
 <body>
 	
 <?php
-	
+
 	include 'database.php';
 
 
-	function remove_item($cart_item){
+	function remove_item($item_number){
+		// if(isset($_SESSION['cart'])){
+		// 	$cart = $_SESSION['cart'];
 
+		// 	foreach ($cart as $rows => $cart_item){
+		// 		if($cart_item['item_number']==$item_number){
+		// 			unset($cart_item);
+
+						$cart = array
+							    (
+							
+							    array("car_name"=>"Corolla","img_url"=>"corolla.png","price"=>199.99,"rental_start"=>"12/8/18","rental_end"=>"12/10/18","item_number"=>2)     
+							    );
+					$_SESSION['cart'] = $cart;
 	}
 
-	function generate_cart(){
+
+	function generate_cart($cart){
 
 
 		$cart = array
@@ -26,18 +39,25 @@
 		array("car_name"=>"Yaris","img_url"=>"yaris.png","price"=>29.99,"rental_start"=>"12/8/18","rental_end"=>"12/10/18","days"=>2),
 		array("car_name"=>"Corolla","img_url"=>"corolla.png","price"=>199.99,"rental_start"=>"12/8/18","rental_end"=>"12/10/18","days"=>2)		  
 		);
+
 		$_SESSION['cart'] = $cart;
+		
 		if(isset($_SESSION['cart'])){
-			$cart = $_SESSION['cart'];
-			foreach ($cart as $rows => $cart_item) {		 
+			
+			$index =1;
+
+			foreach ($cart as $rows => $cart_item){
 			   	echo "<div class='w3-bar-item'>";
-		      	echo "<form action='index.html' method='post'>";
-		      	echo $cart_item["car_name"];
-  	            echo "<img class='object-fit_cover' src='IMG/$cart_item[img_url]' width=100 height=80>";
-	            echo "<input style = margin-left: 10% type=button name=corolla class=button value=x>";
+		      	echo "<form action='inventory.php' method='post'>";
+		      		echo $cart_item["car_name"];
+  	            	echo "<img class='object-fit_cover' src='IMG/$cart_item[img_url]' width=100 height=80>";
+	           	 	echo "<input style = margin-left: 10% type=submit name=corolla class=button value=x>";
+	            	echo "<input type=hidden name=item_number value=$index>";
+
 		        echo "</form>";
           		echo "<div>$cart_item[rental_start]-$cart_item[rental_start]</div>";
 		      	echo "</div>";
+		      	$index++;
 
 			}	   	
 		}
