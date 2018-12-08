@@ -18,26 +18,26 @@
 				
 
 	
-	?>
-		<div class="container">
-			<div class="col-6 col-md-4">
-				<form method="post" action="cart.php">">
-					<h3 class="text-danger"><?php echo $items['name'];?></h3>
-					<img src="<?php echo $items['image'];?>">
-					<h3> <?php echo $items['price'];?> </h3>
-					<input type="text" name="quantity" class="form-control" value="">
-					<input type="hidden" name="name" value="<?php echo $items['name']?>">
-					<input type="hidden" name="price" value="<?php echo $items['price']?>">
-					<input type="submit" name="additem" value="Rent" class="btn btn-dark" style="margin-top: 10px">
-					
-				</form>
-				
-			</div>
-		
-	    </div>
+						?>
+							<div class="container">
+								<div class="col-6 col-md-4">
+									<form method="post" action="cart.php">">
+										<h3 class="text-danger"><?php echo $items['name'];?></h3>
+										<img src="<?php echo $items['image'];?>">
+										<h3> <?php echo $items['price'];?> </h3>
+										<input type="text" name="quantity" class="form-control" value="">
+										<input type="hidden" name="name" value="<?php echo $items['name']?>">
+										<input type="hidden" name="price" value="<?php echo $items['price']?>">
+										<input type="submit" name="additem" value="Rent" class="btn btn-dark" style="margin-top: 10px">
+										
+									</form>
+									
+								</div>
+							
+						    </div>
 
-	<?php
-		}
+						<?php
+				}
 			}
 		}
 	?>
