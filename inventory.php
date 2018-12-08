@@ -1,3 +1,7 @@
+<?php
+
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -13,9 +17,24 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
 <body class="w3-content" style="max-width:1200px">
   <?php
+  
 include 'grid.php';
+
+$cart = array
+    (
+      //carname,imageurl,price/day,rentalstart,rentalend,days
+    array("car_name"=>"Yaris","img_url"=>"yaris.png","price"=>29.99,"rental_start"=>"12/8/18","rental_end"=>"12/10/18","item_number"=>2),
+    array("car_name"=>"Corolla","img_url"=>"corolla.png","price"=>199.99,"rental_start"=>"12/8/18","rental_end"=>"12/10/18","item_number"=>2)     
+    );
+
+    if(!isset($_SESSION['cart'])){
+      $_SESSION['cart'] = $cart;
+    }
+    
+
+//remove item from the cart
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-  //func
+  remove_item($_POST['item_number']);
 }
 
 
@@ -69,29 +88,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         <!-- generate cart -->
         <?php
-generate_cart();
-?>
+          generate_cart($_SESSION['cart']);
+        ?>
         </div>
       </div>
     </div>
 </div>
 
   <!-- Image header -->
-  <div class="w3-display-container w3-container">
+  <!-- <div class="w3-display-container w3-container">
     <img src="/w3images/jeans.jpg" alt="Jeans" style="width:100%">
     <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
       <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
       <h1 class="w3-hide-small">COLLECTION 2016</h1>
 
     </div>
-  </div>
+  </div> -->
   <!-- Product grid -->
   <div class="w3-container" style="padding-bottom: 100px">
     <div class="w3-col l3 s6">
 
         <?php
-generate_grid();
-?>
+          generate_grid();
+        ?>
 
       <!-- <div class="w3-container">
         <img src="/w3images/jeans1.jpg" style="width:100%">
@@ -131,7 +150,7 @@ generate_grid();
 </div>
 
 <!-- Newsletter Modal -->
-<div id="newsletter" class="w3-modal">
+<!-- <div id="newsletter" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
     <div class="w3-container w3-white w3-center">
       <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
@@ -140,7 +159,7 @@ generate_grid();
       <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
       <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <script>
@@ -155,7 +174,7 @@ function myAccFunc() {
 }
 
 // Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
+// document.getElementById("myBtn").click();
 
 
 // Script to open and close sidebar
@@ -172,3 +191,4 @@ function w3_close() {
 
 </body>
 </html>
+
