@@ -20,7 +20,7 @@
 				while($items=mysqli_fetch_assoc($table)){
 					?>
 						<?php
-							echo "<div class=container>";
+							echo "<div class=container style='padding-top: 100px'>";
 								echo "<div class=col-6 col-md-4>";
 									echo"<form method=post action=cart.php>";
 										echo "<h3 class=text-danger>$items[NAME]</h3>";

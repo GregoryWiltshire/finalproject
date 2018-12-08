@@ -84,21 +84,24 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 
   <!-- Product grid -->
-  <?php include 'grid.php'; 
-    generate_grid();
-  ?>
+
   <!-- use grid to generate the cars -->
 
   
-  <div class="w3-row w3-grayscale">
+  <div class="w3-container" style="padding-bottom: 100px">
     <div class="w3-col l3 s6">
-      <div class="w3-container">
+        
+        <?php include 'grid.php'; 
+          generate_grid();
+        ?>
+
+      <!-- <div class="w3-container">
         <img src="/w3images/jeans1.jpg" style="width:100%">
         <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
       </div>
       <div class="w3-container">
         <img src="/w3images/jeans2.jpg" style="width:100%">
-        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+        <p>Mega Ripped Jeans<br><b>$19.99</b></p> -->
       </div>
     </div>
 
