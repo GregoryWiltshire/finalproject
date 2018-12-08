@@ -40,10 +40,10 @@
 
 			 
 			   	echo "<div class='w3-bar-item'>";
-		      	echo "<form action='index.html' method='post'>";
+		      	echo "<form action='inventory.html' method='post'>";
 		      	echo $cart_item["car_name"];
   	            echo "<img class='object-fit_cover' src='IMG/$cart_item[img_url]' width=100 height=80>";
-	            echo "<input style = margin-left: 10% type=button name=corolla class=button value=x>";
+	            echo "<input style = margin-left: 10% type=submit name=corolla class=button value=x>";
 		        echo "</form>";
           		echo "<div>$cart_item[rental_start]-$cart_item[rental_start]</div>";
 		      	echo "</div>";

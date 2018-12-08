@@ -14,6 +14,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <body class="w3-content" style="max-width:1200px">
   <?php
 include 'grid.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+  //func
+}
+
+
 ?>
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
