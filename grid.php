@@ -26,19 +26,10 @@
 		array("car_name"=>"Yaris","img_url"=>"yaris.png","price"=>29.99,"rental_start"=>"12/8/18","rental_end"=>"12/10/18","days"=>2),
 		array("car_name"=>"Corolla","img_url"=>"corolla.png","price"=>199.99,"rental_start"=>"12/8/18","rental_end"=>"12/10/18","days"=>2)		  
 		);
-
 		$_SESSION['cart'] = $cart;
-
-
-
-
-
 		if(isset($_SESSION['cart'])){
 			$cart = $_SESSION['cart'];
-
-			foreach ($cart as $rows => $cart_item) {
-
-			 
+			foreach ($cart as $rows => $cart_item) {		 
 			   	echo "<div class='w3-bar-item'>";
 		      	echo "<form action='index.html' method='post'>";
 		      	echo $cart_item["car_name"];
@@ -48,15 +39,9 @@
           		echo "<div>$cart_item[rental_start]-$cart_item[rental_start]</div>";
 		      	echo "</div>";
 
-			}
-
-
-		   	
+			}	   	
 		}
-
-
-
-		 // echo "<div class='w3-bar-item'>";
+	// echo "<div class='w3-bar-item'>";
          
    //        echo "<form action='index.html' method='post'>";
    //        echo "Car Name";
@@ -82,7 +67,6 @@
 			// 			   echo "</div>";
 
 	}
-
 	function generate_grid(){
 		$table = get_products_table();
 
@@ -111,9 +95,6 @@
 			}
 		}
 	}
-
-?>
-	
-
+?>	
 </body>
 </html>
