@@ -16,6 +16,9 @@
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
 <body class="w3-content" style="max-width:1200px">
+
+
+
   <?php
   
 include 'grid.php';
@@ -81,6 +84,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <form action="inventory.php" method="post">
+          <input type="submit" name="someAction" value="GO" />
+    </form>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>
@@ -90,6 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         <?php
           generate_cart($_SESSION['cart']);
         ?>
+
         </div>
       </div>
     </div>
@@ -188,7 +195,18 @@ function w3_close() {
     document.getElementById("myOverlay").style.display = "none";
 }
 </script>
+  
 
+  <?php
+      if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction']))
+      {
+          destroy_session();
+      }
+        function destroy_session()
+        {
+            session_destroy();    
+        }
+  ?>
 </body>
 </html>
 
