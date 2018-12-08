@@ -62,45 +62,14 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
       <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>  
 
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-       
-        <!-- generate cart -->
-        <div class="w3-bar-item">
-         
-          <form action="index.html" method="post">
-            Car Name
-            <img class="object-fit_cover" src="IMG/corolla.png" width="100" height="80">
-              <input style = "margin-left: 10%" type="button" name="corolla" class="button" value="x">
-            </form>
-          <div>$RENTAL_START-$RENTAL_END</div>
-         
-          
-        </div>
-
-
-
-         
-          
-        </div>
-
-
-            
+        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
+        <a href="#" class="w3-bar-item w3-button">Extras</a>
+        <a href="#" class="w3-bar-item w3-button">Media</a>
       </div>
-
-
-
-
-
-
     </div>
-
-
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
 </div>
-
-
-
-
 
   <!-- Image header -->
   <div class="w3-display-container w3-container">
@@ -114,7 +83,22 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 
 
+  <!-- Product grid -->
+  <?php include 'grid.php'; ?>
+  <!-- use grid to generate the cars -->
+
   
+  <div class="w3-row w3-grayscale">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="/w3images/jeans1.jpg" style="width:100%">
+        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="/w3images/jeans2.jpg" style="width:100%">
+        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+      </div>
+    </div>
 
    
 

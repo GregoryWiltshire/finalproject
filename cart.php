@@ -10,11 +10,35 @@
 	
 	<?php
 	
+	//connect to database
 	include 'database.php';
-	$conn = get_db_connection();
-	$query = 'SELECT * FROM products ORDER BY PRICE DESC';
-	$table = mysqli_query($conn,$query);
-	$conn->close();
+	
+
+	//if cart is not set in session, create
+	if(!isset($_SESSION['cart'])){
+    	$_SESSION['cart'] = array();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	$table = get_products_table();
+
+	// $query = 'SELECT * FROM products ORDER BY PRICE DESC';
+	// $table = mysqli_query($conn,$query);
+	// $conn->close();
 
 		if($table){
 			if(mysqli_num_rows($table)>0){

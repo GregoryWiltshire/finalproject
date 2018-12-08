@@ -36,4 +36,12 @@
         return $conn;
     }
 
+    function get_products_table(){
+        $conn = get_db_connection();
+        $query = 'SELECT * FROM products ORDER BY PRICE DESC';
+        $table = mysqli_query($conn,$query);
+        $conn->close();
+        return $table;
+    }
+
   ?>
