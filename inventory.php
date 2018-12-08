@@ -13,6 +13,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
 <body class="w3-content" style="max-width:1200px">
 
+  <?php
+    include 'grid.php';
+  ?>
+
 
 
 
@@ -60,15 +64,30 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>  
-
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
-        <a href="#" class="w3-bar-item w3-button">Extras</a>
-        <a href="#" class="w3-bar-item w3-button">Media</a>
+       
+        <!-- generate cart -->
+        <?php
+          generate_cart();
+        ?>
+        
+
+
+
+         
+          
+        </div>
+
+
+            
       </div>
+
+
+
+
+
+
     </div>
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
-  </div>
 </div>
 
   <!-- Image header -->
@@ -84,14 +103,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 
   <!-- Product grid -->
-
-  <!-- use grid to generate the cars -->
-
-  
   <div class="w3-container" style="padding-bottom: 100px">
     <div class="w3-col l3 s6">
         
-        <?php include 'grid.php'; 
+        <?php 
           generate_grid();
         ?>
 
