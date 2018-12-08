@@ -12,27 +12,23 @@
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
 <body class="w3-content" style="max-width:1200px">
-
   <?php
-    include 'grid.php';
-  ?>
-
-
-
-
+include 'grid.php';
+?>
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
-  <div class="w3-container w3-display-container w3-padding-16">
-    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <h3 class="w3-wide"><b>LOGO</b></h3>
-  </div>
-  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-    <a href="#" class="w3-bar-item w3-button">Sedan</a>
-    <a href="#" class="w3-bar-item w3-button">Mid-Size</a>
-    <a href="#" class="w3-bar-item w3-button">Luxury</a>
-  </div>
-</nav>
-
+    <div class="w3-container w3-display-container w3-padding-16">
+      <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+      <h3 class="w3-wide"><b>A.G.S.</b></h3>
+    </div>
+    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+      <h3 id="inven"> <a href="inventory.php" class="w3-bar-item w3-button">Inventory</a></h3>
+      <h5 class="w3-bar-item" id="filter">Filter By Car Type</h5>
+      <a href="#" class="w3-bar-item w3-button">Sedan</a>
+      <a href="#" class="w3-bar-item w3-button">Mid-Size</a>
+      <a href="#" class="w3-bar-item w3-button">Luxury</a>
+    </div>
+  </nav>
 <!-- Top menu on small screens -->
 <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
   <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
@@ -47,7 +43,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
   <!-- Push down content on small screens -->
   <div class="w3-hide-large" style="margin-top:83px"></div>
-  
+
   <!-- Top header -->
 <!--   <header class="w3-container w3-xlarge">
     <p class="w3-left">Jeans</p>
@@ -63,30 +59,15 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>  
+      <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-       
+
         <!-- generate cart -->
         <?php
-          generate_cart();
-        ?>
-        
-
-
-
-         
-          
+generate_cart();
+?>
         </div>
-
-
-            
       </div>
-
-
-
-
-
-
     </div>
 </div>
 
@@ -96,19 +77,16 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
       <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
       <h1 class="w3-hide-small">COLLECTION 2016</h1>
-      
+
     </div>
   </div>
-
-
-
   <!-- Product grid -->
   <div class="w3-container" style="padding-bottom: 100px">
     <div class="w3-col l3 s6">
-        
-        <?php 
-          generate_grid();
-        ?>
+
+        <?php
+generate_grid();
+?>
 
       <!-- <div class="w3-container">
         <img src="/w3images/jeans1.jpg" style="width:100%">
@@ -119,11 +97,6 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
         <p>Mega Ripped Jeans<br><b>$19.99</b></p> -->
       </div>
     </div>
-
-   
-
-
-  
   <!-- Footer -->
   <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
     <div class="w3-row-padding">
@@ -166,7 +139,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </div>
 
 <script>
-// Accordion 
+// Accordion
 function myAccFunc() {
     var x = document.getElementById("demoAcc");
     if (x.className.indexOf("w3-show") == -1) {
@@ -185,7 +158,7 @@ function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
 }
- 
+
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";

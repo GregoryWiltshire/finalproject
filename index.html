@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-crossorigin="anonymous">
+  crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="parkingTest.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -37,6 +37,11 @@ crossorigin="anonymous">
       display: block;
       margin-left: auto;
       margin-right: auto;
+      }
+      #moveright {
+        position: absolute;
+        left: 1000px;
+        top: 100px;
       }
    </style>
 
@@ -129,7 +134,7 @@ crossorigin="anonymous">
             <button type="button" class="btn btn-outline-dark" id="myButton"> Check Rates </button>
             <button type="button" class="btn btn-outline-dark"> Reserve </button>
           </div>
-          <div class="w3-col s4 w3-justify">
+          <div class="w3-col s4 w3-justify" id="moveright">
             <h4>Store</h4>
             <p><i class="fa fa-fw fa-map-marker"></i>Alpha Squad</p>
             <p><i class="fa fa-fw fa-phone"></i> 111-111-1111</p>
