@@ -1,0 +1,21 @@
+.creditCardForm {
+    max-width: 600px;
+    background-color: white;
+    margin: 100px auto;
+    opacity: .9;
+}
+.creditCardForm Label {
+    width: 100%;
+    margin-bottom: 100px;
+}
+.creditCardForm h1 {
+    text-align: center;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-color: antiquewhite;
+}
+.transparent{
+    opacity: .2;
+}
