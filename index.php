@@ -53,6 +53,11 @@
   top: 10px;
   right: 400px;
 }
+#registerButton {
+  position: absolute;
+  top: 10px;
+  right: 490px;
+}
    </style>
 
 <body class="w3-content" style="max-width:1200px">
@@ -103,6 +108,9 @@
     </form>
     <form action="inventory.php" method="post">
           <input type="submit" name="someAction" class="btn btn-light" value="login" id="loginButton"/>
+    </form>
+    <form action="inventory.php" method="post">
+          <input type="submit" name="someAction" class="btn btn-light" value="register" id="registerButton"/>
     </form>
           <div class="w3-dropdown-content w3-bar-block w3-card-4">
             <!-- generate cart -->

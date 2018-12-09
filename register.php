@@ -6,8 +6,10 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
+  <title>Account Register</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="test1.css">
+  
 </head>
 <body>
   <?php
@@ -127,9 +129,6 @@ function test_input($data) {
       <fieldset>
        <?php echo $cpass;?>
       <input placeholder="Confirm Password" type="password" tabindex="5" name="cpass">
-    </fieldset>
-    <fieldset>
-      <textarea placeholder="Played our games before? Tell us what you think" tabindex="6"></textarea>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit">Submit</button>

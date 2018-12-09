@@ -1,6 +1,6 @@
 <?php
 
-  session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,14 +11,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style>
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
@@ -30,31 +22,37 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 #loginButton {
   position: absolute;
   top: 10px;
-  right: 350px;
+  right: 400px;
+}
+#registerButton {
+  position: absolute;
+  top: 10px;
+  right: 490px;
 }
 </style>
 <body class="w3-content" style="max-width:1200px">
+
+
+
   <?php
- 
+
 include 'grid.php';
 
 $cart = array
     (
-      //carname,imageurl,price/day,rentalstart,rentalend,days
-    array("car_name"=>"Yaris","img_url"=>"yaris.png","price"=>29.99,"rental_start"=>"12/8/18","rental_end"=>"12/10/18","item_number"=>2),
-    array("car_name"=>"Corolla","img_url"=>"corolla.png","price"=>199.99,"rental_start"=>"12/8/18","rental_end"=>"12/10/18","item_number"=>2)     
-    );
+    //carname,imageurl,price/day,rentalstart,rentalend,days
+    array("car_name" => "Yaris", "img_url" => "yaris.png", "price" => 29.99, "rental_start" => "12/8/18", "rental_end" => "12/10/18", "item_number" => 2),
+    array("car_name" => "Corolla", "img_url" => "corolla.png", "price" => 199.99, "rental_start" => "12/8/18", "rental_end" => "12/10/18", "item_number" => 2),
+);
 
-    if(!isset($_SESSION['cart'])){
-      $_SESSION['cart'] = $cart;
-    }
-    
-
-//remove item from the cart
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-  remove_item($_POST['item_number']);
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = $cart;
 }
 
+//remove item from the cart
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    remove_item($_POST['item_number']);
+}
 
 ?>
 <!-- Sidebar/menu -->
@@ -105,6 +103,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <form action="inventory.php" method="post">
           <input type="submit" name="someAction" class="btn btn-light" value="login" id="loginButton"/>
     </form>
+    <form action="inventory.php" method="post">
+          <input type="submit" name="someAction" class="btn btn-light" value="register" id="registerButton"/>
+    </form>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>
@@ -112,8 +113,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         <!-- generate cart -->
         <?php
-          generate_cart($_SESSION['cart']);
-        ?>
+generate_cart($_SESSION['cart']);
+?>
 
         </div>
       </div>
@@ -134,8 +135,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <div class="w3-col l3 s6">
 
         <?php
-          generate_grid();
-        ?>
+generate_grid();
+?>
 
       <!-- <div class="w3-container">
         <img src="/w3images/jeans1.jpg" style="width:100%">
@@ -213,17 +214,17 @@ function w3_close() {
     document.getElementById("myOverlay").style.display = "none";
 }
 </script>
-  
+
 
   <?php
-      if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction']))
-      {
-          destroy_session();
-      }
-        function destroy_session()
-        {
-            session_destroy();    
-        }
-  ?>
+if ($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction'])) {
+    destroy_session();
+}
+function destroy_session()
+{
+    session_destroy();
+}
+?>
 </body>
 </html>
+
