@@ -35,6 +35,7 @@
 	
 	<?php
 	session_start();
+	include 'database.php';
 
 		$cart=$_SESSION	['cart'];
 		echo"<table border=1 width=500 height=500 rules=none>";
@@ -49,6 +50,16 @@
 			echo "<td>$cart_item[days]</td>";
 			echo "</tr>";
 			}
-		echo"</table>"
+		echo"</table>";
+
+		echo "<form action='cc.php' method='post'>";
+
+		echo "<input style = margin-left: 10% type=submit name=remove class=btn-dark value=Checkout>";
+
+		create_order();
+
+		echo "</form>";
+
+
 
 	?>

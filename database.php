@@ -55,18 +55,30 @@
         return $result;
     }
 
-    function create_order($cart){
+    function create_order(){
         $conn = get_db_connection();
         //for each element in cart
+        $cart = $_SESSION['cart'];
 
-        $query = "INSERT INTO orders USERNAME, PASSWORD, CARNAME, AMOUNT, DAYS VALUES($username, $password, ";
+        foreach ($cart as $rows => $cart_item){
+            
+
+            $username = $_SESSION['username'];
+            $password = $_SESSION['password'];
+            $car_name = $cart_item['car_name'];
+            $price = $cart_item['price'];
+            $days = $cart_item['days'];
+
+
+
+        $query = "INSERT INTO orders USERNAME, PASSWORD, CARNAME, AMOUNT, DAYS VALUES($username, $password, $car_name, $price, $days)";
         
         if (!$result = $conn->query($query)){
         echo "unable to execute query";
         }
         $conn->close();
-        return $result;
     }
+}
 
 
   ?>

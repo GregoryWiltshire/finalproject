@@ -46,6 +46,8 @@
         </tr>
         <?php
         include 'database.php';
+            
+
                 
                 //must add session info to pass the password and user here
                 $table = get_orders($_SESSION['username'],$_SESSION['password']);
