@@ -1,6 +1,6 @@
 <?php
 
-  session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,12 +14,28 @@
 <style>
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+#logoutButton {
+  position: absolute;
+  top: 10px;
+  right: 300px;
+}
+#loginButton {
+  position: absolute;
+  top: 10px;
+  right: 400px;
+}
+#registerButton {
+  position: absolute;
+  top: 10px;
+  right: 490px;
+}
 </style>
 <body class="w3-content" style="max-width:1200px">
 
 
 
   <?php
+
     include 'grid.php';
     include 'cart.php';
 
@@ -49,7 +65,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
         }
 
 
-  ?>
+
+
+
+?>
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
@@ -86,8 +105,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+
     <form action="index.php" method="post">
           <input class=btn-dark type="submit" name="log_out" value="Logout" />
+
+   
     </form>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <div class="w3-dropdown-hover w3-hide-small">
@@ -96,8 +118,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
         <!-- generate cart -->
         <?php
-          generate_cart($_SESSION['cart']);
-        ?>
+generate_cart($_SESSION['cart']);
+?>
 
         </div>
       </div>
@@ -108,8 +130,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <div class="w3-container" style="padding-bottom: 100px">
     <div class="w3-col l3 s6">
         <?php
+
           generate_grid();
         ?>
+
+
       </div>
     </div>
 
@@ -170,16 +195,16 @@ function w3_close(){
     document.getElementById("myOverlay").style.display = "none";
 }
 
-
 </script>
   <?php
       if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['log_out']))
       {
         destroy_session();
-        header("Location:https://google.com");
+        header("Location:index.php");
         exit();
       }
   ?>
+
 </body>
 </html>
 

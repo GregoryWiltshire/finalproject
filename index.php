@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="parkingTest.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -43,6 +45,21 @@
         left: 1000px;
         top: 100px;
       }
+      #logoutButton {
+  position: absolute;
+  top: 10px;
+  right: 300px;
+}
+#loginButton {
+  position: absolute;
+  top: 10px;
+  right: 400px;
+}
+#registerButton {
+  position: absolute;
+  top: 10px;
+  right: 490px;
+}
    </style>
 
 <body class="w3-content" style="max-width:1200px">
@@ -88,12 +105,21 @@
         <div class="w3-dropdown-hover w3-hide-small">
           <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>
           <a href="account.php" class="w3-bar-item w3-button w3-padding-large">Account</a>
+          <form action="inventory.php" method="post">
+          <input type="submit" name="someAction" class="btn btn-light" value="logout" id="logoutButton"/>
+    </form>
+    <form action="inventory.php" method="post">
+          <input type="submit" name="someAction" class="btn btn-light" value="login" id="loginButton"/>
+    </form>
+    <form action="inventory.php" method="post">
+          <input type="submit" name="someAction" class="btn btn-light" value="register" id="registerButton"/>
+    </form>
           <div class="w3-dropdown-content w3-bar-block w3-card-4">
             <!-- generate cart -->
             <?php
-              include 'grid.php';
-              generate_cart($_SESSION['cart']);
-            ?>
+include 'grid.php';
+generate_cart($_SESSION['cart']);
+?>
           </div>
         </div>
       </div>
@@ -129,8 +155,15 @@
           <br>
           <div class="btn-group">
             <button type="button" class="btn btn-outline-dark" id="myButton"> Check Rates </button>
-            <button type="button" class="btn btn-outline-dark"> Reserve </button>
           </div>
+          <div>
+                    <h3 id="DayAmount">
+                        <h3 id="VIPAmount">
+                        </h3>
+                        <h3 id="randomAmount">
+                        </h3>
+                    </h3>
+                </div>
           <div class="w3-col s4 w3-justify" id="moveright">
             <h4>Store</h4>
             <p><i class="fa fa-fw fa-map-marker"></i>Alpha Squad</p>
@@ -147,7 +180,24 @@
     <!-- End page content -->
   </div>
   <script>
-    // Accordion 
+    function generateRandom() {
+                Math.floor(Math.random(1) * 10);
+            }
+            var modal = document.getElementById('myModal');
+            var btn = document.getElementById("myButton");
+            var span = document.getElementsByClassName("close")[0];
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+    // Accordion
     function myAccFunc() {
       var x = document.getElementById("demoAcc");
       if (x.className.indexOf("w3-show") == -1) {
