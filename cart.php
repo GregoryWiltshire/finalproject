@@ -27,11 +27,7 @@ error_reporting(E_ALL|E_STRICT);
 		//push the item
 		array_push($cart, $new_item);
 		$_SESSION['cart'] = $cart;
-
-
 	}
-
-
 	function remove_item($item_number){
 		//need to rebalance the item numbers after a remove
 		// if(isset($_SESSION['cart'])){
@@ -45,12 +41,5 @@ error_reporting(E_ALL|E_STRICT);
 		$temp_cart = [];
 		$_SESSION['cart'] = $temp_cart;
 		header("Location:inventory.php");
-
-
-		}
-
-	
-
-
- 	
+		} 	
 ?>
