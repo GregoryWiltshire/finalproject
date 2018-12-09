@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="parkingTest.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -153,8 +155,15 @@ generate_cart($_SESSION['cart']);
           <br>
           <div class="btn-group">
             <button type="button" class="btn btn-outline-dark" id="myButton"> Check Rates </button>
-            <button type="button" class="btn btn-outline-dark"> Reserve </button>
           </div>
+          <div>
+                    <h3 id="DayAmount">
+                        <h3 id="VIPAmount">
+                        </h3>
+                        <h3 id="randomAmount">
+                        </h3>
+                    </h3>
+                </div>
           <div class="w3-col s4 w3-justify" id="moveright">
             <h4>Store</h4>
             <p><i class="fa fa-fw fa-map-marker"></i>Alpha Squad</p>
@@ -171,6 +180,23 @@ generate_cart($_SESSION['cart']);
     <!-- End page content -->
   </div>
   <script>
+    function generateRandom() {
+                Math.floor(Math.random(1) * 10);
+            }
+            var modal = document.getElementById('myModal');
+            var btn = document.getElementById("myButton");
+            var span = document.getElementsByClassName("close")[0];
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
     // Accordion
     function myAccFunc() {
       var x = document.getElementById("demoAcc");

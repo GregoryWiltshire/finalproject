@@ -3,7 +3,7 @@
 	<head>
 		<title>Cart</title>
 		  <style type="text/css">
-				table{
+			  table{
 				border: 1px solid black;
 		        table-layout: fixed;
 		        width: 200px;
@@ -19,6 +19,14 @@
 				    border-collapse: collapse;
 				}
 			</style>
+			 <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 	</head>
 	<body>
 
@@ -41,10 +49,7 @@
 			echo "<td>$cart_item[price]</td>";
 			echo "<td>$cart_item[days]</td>";
 			echo "<td>$cart_item[rental_start]-$cart_item[rental_start]</td>";
-
 			echo "</tr>";
-			
-
 			}
 		echo"</table>"
 

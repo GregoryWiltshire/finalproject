@@ -60,8 +60,6 @@ session_start();
      </fieldset>
       <button name="submit" type="submit" id="contact-submit">Log in</button>
     </fieldset>
-    <a href="test1.php" style="margin: 0 auto; display:block; text-align: center;  text-decoration: none; padding-top: 10px; font-size: 15px;
-   ">Register</a>
    </form>
 </div>
 </body>
