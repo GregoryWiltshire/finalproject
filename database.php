@@ -55,4 +55,18 @@
         return $result;
     }
 
+    function create_order($cart){
+        $conn = get_db_connection();
+        //for each element in cart
+
+        $query = "INSERT INTO orders USERNAME, PASSWORD, CARNAME, AMOUNT, DAYS VALUES($username, $password, ";
+        
+        if (!$result = $conn->query($query)){
+        echo "unable to execute query";
+        }
+        $conn->close();
+        return $result;
+    }
+
+
   ?>

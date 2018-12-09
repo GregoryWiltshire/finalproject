@@ -50,7 +50,7 @@
                 
                 
                 //must add session info to pass the password and user here
-                $table = get_orders('samir','password1');
+                $table = get_orders($_SESSION['username'],$_SESSION['password']);
                 if($table){
                     if(mysqli_num_rows($table)>0){
                         while($row=mysqli_fetch_assoc($table)){

@@ -90,14 +90,10 @@
           <a href="account.php" class="w3-bar-item w3-button w3-padding-large">Account</a>
           <div class="w3-dropdown-content w3-bar-block w3-card-4">
             <!-- generate cart -->
-            <div class="w3-bar-item">
-              <form action="index.html" method="post">
-                Car Name
-                <img class="object-fit_cover" src="IMG/corolla.png" width="100" height="80">
-                <input style="margin-left: 10%" type="button" name="corolla" class="button" value="x">
-              </form>
-              <div>$RENTAL_START-$RENTAL_END</div>
-            </div>
+            <?php
+              include 'grid.php';
+              generate_cart($_SESSION['cart']);
+            ?>
           </div>
         </div>
       </div>
