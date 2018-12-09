@@ -76,13 +76,13 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
       <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
       <h3 class="w3-wide"><b>A.G.S.</b></h3>
     </div>
-    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <!-- <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
       <h3 id="inven"> <a href="inventory.php" class="w3-bar-item w3-button">Inventory</a></h3>
       <h5 class="w3-bar-item" id="filter">Filter By Car Type</h5>
       <a href="#" class="w3-bar-item w3-button">Sedan</a>
       <a href="#" class="w3-bar-item w3-button">Mid-Size</a>
       <a href="#" class="w3-bar-item w3-button">Luxury</a>
-    </div>
+    </div> -->
   </nav>
 <!-- Top menu on small screens -->
 <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
@@ -111,7 +111,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
    
     </form>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="index.php" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-padding-large w3-button" title="More"><a href="checkout.php">YOUR CART </a><i class="fa fa-shopping-cart w3-margin-right"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">

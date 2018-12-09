@@ -68,14 +68,15 @@
     <div class="w3-container w3-display-container w3-padding-16">
       <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
       <h3 class="w3-wide"><b>A.G.S.</b></h3>
+      <h3 id="inven"> <a href="inventory.php" class="w3-bar-item w3-button">Inventory</a></h3>
     </div>
-    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+   <!--  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
       <h3 id="inven"> <a href="inventory.php" class="w3-bar-item w3-button">Inventory</a></h3>
       <h5 class="w3-bar-item" id="filter">Filter By Car Type</h5>
       <a href="#" class="w3-bar-item w3-button">Sedan</a>
       <a href="#" class="w3-bar-item w3-button">Mid-Size</a>
       <a href="#" class="w3-bar-item w3-button">Luxury</a>
-    </div>
+    </div> -->
   </nav>
   <!-- Top menu on small screens -->
   <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
@@ -101,7 +102,7 @@
       <div class="w3-bar w3-black w3-card">
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
           onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="index.php" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <div class="w3-dropdown-hover w3-hide-small">
           <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>
           <a href="account.php" class="w3-bar-item w3-button w3-padding-large">Account</a>

@@ -38,20 +38,13 @@
 
 		      		echo $cart_item["car_name"];
   	            	echo "<img class='object-fit_cover' src='IMG/$cart_item[img_url]' width=100 height=80>";
-	           	 	//echo "<input style = margin-left: 10% type=submit name=remove class=button value=x>";
 	            	echo "<input type=hidden name=car_name value=$cart_item[car_name]>";
 	            	echo "<input type=hidden name=img_url value=$cart_item[img_url]>";
 	            	echo "<input type=hidden name=price value=$cart_item[price]>";
 	            	echo "<input type=hidden name=rental_start value=$cart_item[days]>";
-
-	            	
 	            	echo "<input type=hidden name=item_number value=$index>";
 	            	
 	            	$cart_item['item_number'] = $index;
-
-	            	foreach ( $cart_item as $var ) {
-	            	    echo $var;
-	            	}
 
 	            
 

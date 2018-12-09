@@ -41,14 +41,12 @@
 		echo"<th>Car Rented</th>";
 		echo"<th>Car Price</th>";
 		echo"<th>Number of Days</th>";
-		echo"<th>Rental Start/End Days</th>";
 		foreach ($cart as $rows => $cart_item){
 		
 			echo "<tr>";
 			echo "<td>$cart_item[car_name]</td>";
 			echo "<td>$cart_item[price]</td>";
 			echo "<td>$cart_item[days]</td>";
-			echo "<td>$cart_item[rental_start]-$cart_item[rental_start]</td>";
 			echo "</tr>";
 			}
 		echo"</table>"
