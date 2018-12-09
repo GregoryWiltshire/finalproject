@@ -113,7 +113,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </form>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>
+      <button class="w3-padding-large w3-button" title="More"><a href="checkout.php">YOUR CART </a><i class="fa fa-shopping-cart w3-margin-right"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
 
         <!-- generate cart -->
