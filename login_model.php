@@ -57,29 +57,11 @@
 
 
     if(mysqli_num_rows($result)==1){
-          // $i =0;
-          // while($row = $result->fetch_assoc())
-          // {
-          //     $rows[$i] = $row;
-          //     $i++;
-          // }
-
-          // foreach($result as $value)
-          // {
-
-          //     foreach($value as $l){
-          //         echo($l . "\n");
-          //     }
-          // }
-
           return true;
-          
-
       }
       else{
        return false;
       }
-
     $result->free();
     $conn->close();
   }
@@ -103,12 +85,12 @@
   // }
 
   //testing pw
-  if(column_value_exist('Bollucks','PASSWORD')){
-    echo("pw was valid");
-  } 
-  else{
-        echo("pw was not valid");
-  }
+  // if(column_value_exist('Bollucks','PASSWORD')){
+  //   echo("pw was valid");
+  // } 
+  // else{
+  //       echo("pw was not valid");
+  // }
 
 
   //create_user("samir","purple","booty@booty.com");

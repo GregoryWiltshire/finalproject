@@ -44,4 +44,15 @@
         return $table;
     }
 
+    function get_orders($username,$password){
+        $conn = get_db_connection();
+        $query = "SELECT * FROM orders WHERE USERNAME='$username' AND PASSWORD='$password'";
+        
+        if (!$result = $conn->query($query)){
+        echo "unable to execute query";
+        }
+        $conn->close();
+        return $result;
+    }
+
   ?>

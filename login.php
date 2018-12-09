@@ -1,6 +1,5 @@
 <?php
 session_start();
-include "login_controller.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,44 +8,39 @@ include "login_controller.php";
   <link rel="stylesheet" type="text/css" href="test1.css">
 </head>
 <body>
-  <?php
-$logattempts = "";
-$user = "";
-$pass = "";
-$validate = true;
-// define variables and set to empty values
+<?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["username"])) {
-        $user = "User Name is required";
-        $validate = false;
+  $logattempts = "";
+  $user = "";
+  $pass = "";
+  // define variables and set to empty values
+
+  include 'login_model.php';
+
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+      if (empty($_POST["username"])){
+          $user = "User Name is required";
+      }
+      if (empty($_POST["password"])){
+          $pass = "Password is required";
+      }
+      if(!empty($_POST["password"]) && !empty($_POST["username"])){
+        if(!valid_credentials($_POST["username"], $_POST["password"])){
+          $_SESSION['count']++;
+          $logattempts = "Login Failed " . $_SESSION['count'] . " times";
+          $user = "User Name doesn't match";
+          $pass = "Password Does Not Match";
+        }
+
+        else{
+          $_SESSION['username']=$_POST['username'];
+          $_SESSION['password']=$_POST['password'];
+          header('Location:index.php');
+        }
+      }
     }
-    if (empty($_POST["password"])) {
-        $pass = "Password is required";
-        $validate = false;
-    }
-    if (!empty($_POST["password"]) && !empty($_POST["username"]) && checklogin($_POST["username"], $_POST["password"]) == false) {
-        $_SESSION['count']++;
-        $logattempts = "Login Failed " . $_SESSION['count'] . " times";
-        $user = "User Name doesn't match";
-        $pass = "Password Does Not Match";
-        $validate = false;
+  
 
-    }
-
-    //if (!empty($_POST["username"])&& checklogin($_POST["username"])!=true) {
-    //$user= "User Name doesn't match";
-    //$validate=false;
-
-    //}
-    if ($validate === true) {
-        session_destroy();
-        header('Location:https://bryantarchway.com/what-is-the-true-meaning-of-success/');
-
-    }
-    //echo $_SESSION['user'];
-    //echo $_SESSION['pass'];
-}
 ?>
   <div class="container" id="test2">
   <form id="contact" action="" method="post">
