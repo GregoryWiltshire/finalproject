@@ -1,0 +1,56 @@
+CREATE TABLE `orders` (
+  `USERNAME` varchar(255) NOT NULL,
+  `PASSWORD` varchar(30) NOT NULL,
+  `TIMESTAMP` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `CARNAME` varchar(255) NOT NULL,
+  `AMOUNT` float NOT NULL,
+  `DAYS` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`USERNAME`, `PASSWORD`, `TIMESTAMP`, `CARNAME`, `AMOUNT`, `DAYS`) VALUES
+('samir', 'password1', '2018-12-08 22:59:06', 'Corolla', 39.99, 1),
+('greg', 'password', '2018-12-08 22:59:06', 'Camry', 89.99, 2);
+
+
+
+
+CREATE TABLE `products` (
+  `NAME` varchar(255) NOT NULL,
+  `IMAGE` varchar(255) NOT NULL,
+  `PRICE` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`NAME`, `IMAGE`, `PRICE`) VALUES
+('Toyota 86', 'toyota86.png', 79.99),
+('Corolla', 'corolla.png', 34.99),
+('Yaris', 'yaris.png', 29.99);
+
+
+
+
+CREATE TABLE `users` (
+  `USERNAME` varchar(30) NOT NULL,
+  `EMAIL` varchar(100) NOT NULL,
+  `PASSWORD` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`USERNAME`, `EMAIL`, `PASSWORD`) VALUES
+('greg', 'greg@gmail.com', 'password'),
+('samir', 'samir@gmail.com', 'password1');
+
+
+
+
+
