@@ -20,6 +20,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
   crossorigin="anonymous"></script>
 <style>
+  
+
   .w3-sidebar a {font-family: "Roboto", sans-serif}
       body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
       #inven{
@@ -60,6 +62,7 @@
   top: 10px;
   right: 490px;
 }
+
    </style>
 
 <body class="w3-content" style="max-width:1200px">
@@ -107,16 +110,22 @@
           <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>
           <a href="account.php" class="w3-bar-item w3-button w3-padding-large">Account</a>
           <form action="inventory.php" method="post">
+             </form>
+              <form action="inventory.php" method="post">
+                    <input type="submit" name="someAction" class="btn btn-light" value="login" id="loginButton"/>
+              </form>
+              <form action="inventory.php" method="post">
+                    <input type="submit" name="someAction" class="btn btn-light" value="register" id="registerButton"/>
+              </form>
+              </form>
           <input type="submit" name="someAction" class="btn btn-light" value="logout" id="logoutButton"/>
-    </form>
-    <form action="inventory.php" method="post">
-          <input type="submit" name="someAction" class="btn btn-light" value="login" id="loginButton"/>
-    </form>
-    <form action="inventory.php" method="post">
-          <input type="submit" name="someAction" class="btn btn-light" value="register" id="registerButton"/>
-    </form>
+
+
           <div class="w3-dropdown-content w3-bar-block w3-card-4">
             <!-- generate cart -->
+
+
+
             <?php
 include 'grid.php';
 generate_cart($_SESSION['cart']);
@@ -170,7 +179,7 @@ generate_cart($_SESSION['cart']);
             <p><i class="fa fa-fw fa-map-marker"></i>Alpha Squad</p>
             <p><i class="fa fa-fw fa-phone"></i> 111-111-1111</p>
             <p><i class="fa fa-fw fa-envelope"></i> alpha@mail.com</p>
-            <p><i class="fa fa-fw fa-youtube"></i><a href="youtube.com"> Presentation Video</a></p>
+            <p><i class="fa fa-fw fa-youtube"></i><a href="https://www.youtube.com/channel/UCPQ4akPsXNwFf75JhZlfkQw"> Youtube Presentation Video</a></p>
             <h4>We accept</h4>
             <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
             <p><i class="fa fa-fw fa-cc-amex"></i> Visa</p>
