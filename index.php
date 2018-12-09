@@ -43,6 +43,16 @@
         left: 1000px;
         top: 100px;
       }
+      #logoutButton {
+  position: absolute;
+  top: 10px;
+  right: 300px;
+}
+#loginButton {
+  position: absolute;
+  top: 10px;
+  right: 400px;
+}
    </style>
 
 <body class="w3-content" style="max-width:1200px">
@@ -88,12 +98,18 @@
         <div class="w3-dropdown-hover w3-hide-small">
           <button class="w3-padding-large w3-button" title="More">YOUR CART <i class="fa fa-shopping-cart w3-margin-right"></i></button>
           <a href="account.php" class="w3-bar-item w3-button w3-padding-large">Account</a>
+          <form action="inventory.php" method="post">
+          <input type="submit" name="someAction" class="btn btn-light" value="logout" id="logoutButton"/>
+    </form>
+    <form action="inventory.php" method="post">
+          <input type="submit" name="someAction" class="btn btn-light" value="login" id="loginButton"/>
+    </form>
           <div class="w3-dropdown-content w3-bar-block w3-card-4">
             <!-- generate cart -->
             <?php
-              include 'grid.php';
-              generate_cart($_SESSION['cart']);
-            ?>
+include 'grid.php';
+generate_cart($_SESSION['cart']);
+?>
           </div>
         </div>
       </div>
@@ -147,7 +163,7 @@
     <!-- End page content -->
   </div>
   <script>
-    // Accordion 
+    // Accordion
     function myAccFunc() {
       var x = document.getElementById("demoAcc");
       if (x.className.indexOf("w3-show") == -1) {

@@ -22,10 +22,15 @@
 <style>
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
-#goButton {
+#logoutButton {
   position: absolute;
   top: 10px;
   right: 300px;
+}
+#loginButton {
+  position: absolute;
+  top: 10px;
+  right: 350px;
 }
 </style>
 <body class="w3-content" style="max-width:1200px">
@@ -95,7 +100,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <form action="inventory.php" method="post">
-          <input type="submit" name="someAction" class="btn btn-light" value="GO" id="goButton"/>
+          <input type="submit" name="someAction" class="btn btn-light" value="logout" id="logoutButton"/>
+    </form>
+    <form action="inventory.php" method="post">
+          <input type="submit" name="someAction" class="btn btn-light" value="login" id="loginButton"/>
     </form>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <div class="w3-dropdown-hover w3-hide-small">
