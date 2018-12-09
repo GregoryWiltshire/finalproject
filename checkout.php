@@ -18,6 +18,11 @@
 				    border-top: 1px solid black;
 				    border-collapse: collapse;
 				}
+				h1 {
+					position: absolute;
+					top: 100px;
+					right: 700px;
+				}
 			</style>
 			 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -29,7 +34,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 	</head>
 	<body>
-
+<h1><a href="http://localhost/finalproject/CC/cc.html">Pay Here</a></h1>
 	</body>
 	</html>
 	

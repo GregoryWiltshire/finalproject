@@ -170,6 +170,7 @@ generate_cart($_SESSION['cart']);
             <p><i class="fa fa-fw fa-map-marker"></i>Alpha Squad</p>
             <p><i class="fa fa-fw fa-phone"></i> 111-111-1111</p>
             <p><i class="fa fa-fw fa-envelope"></i> alpha@mail.com</p>
+            <p><i class="fa fa-fw fa-youtube"></i><a href="youtube.com"> Presentation Video</a></p>
             <h4>We accept</h4>
             <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
             <p><i class="fa fa-fw fa-cc-amex"></i> Visa</p>
